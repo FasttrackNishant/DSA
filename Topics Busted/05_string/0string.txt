@@ -1,0 +1,9 @@
+string -> one dimensional character array
+
+\0 --> Null character  which has ascii value 0
+       and it is used as a terminator
+
+cin>> ->stops taking input when we give it 
+        space , tab , new line character
+
+

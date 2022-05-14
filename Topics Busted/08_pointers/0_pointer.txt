@@ -1,0 +1,25 @@
+symbol table -> jaha pe mapping store hoti hain
+
+& --> used to print the address
+
+pointer is used to store the address
+
+never set unassigned pointer 
+int * ptr;   -> Bad Pratice
+
+int *p = p is a pointer to int datatype
+
+* is a derefrence operator
+
+int * p = 0; -->segmentation fault
+
+~~~~~
+
+int arr[10]
+--> it will take 40 byte storage & the address of first position is the name of array
+
+cout<<arr<<endl; --> first address
+
+arr[i] = *(arr+i)
+or
+i[arr] = *(i+arr);

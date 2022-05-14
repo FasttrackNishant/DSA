@@ -1,0 +1,11 @@
+~~~  OOPS
+
+-> This is one type of programming where things will revolve around the object
+ 
+            --> state / property
+object   --> Behaviour
+
+class    --> user defined datatype
+
+4 pillars of OOPS :- encapsulation
+                     inheritance , polymorphism , abstraction   
