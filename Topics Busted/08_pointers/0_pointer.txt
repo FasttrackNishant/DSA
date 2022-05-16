@@ -19,7 +19,70 @@ int arr[10]
 --> it will take 40 byte storage & the address of first position is the name of array
 
 cout<<arr<<endl; --> first address
-
+~~~~~~~
+~~~~~~~
+~~~~~~~~
 arr[i] = *(arr+i)
 or
 i[arr] = *(i+arr);
+~~~~~~~~
+~~~~~~~~
+~~~~~~~~
+
+
+Differences between ptr and array
+
+1.bts
+
+int arr[10] 
+10 places memory reserved  
+and arr pointing to first position 
+
+
+int *p =&arr[0];
+p has stored the address of arr at first location 
+
+
+sizeof   array -> sizeof x sizeofarr
+         ptr   -> always 8
+
+
+->content of symbol table can not be changed 
+
+
+
+
+~~~~~~~~
+Char <--> pointer
+
+char have to one more size as it ends with the null character 
+
+if we try to print the name of char arr then it will print whole content rather in the integre array it was only printing the first index address
+
+
+
+
+~~~~
+Function with ptr
+
+int getsum (int arr[] , int size)
+
+yaha pe jo arr uski size 8 print karega kyuki woh array nahi pass hua pointer pass hota hain
+
+bts yesa hain
+
+int getsum (int *arr , int size)
+
+isse hume benefit kya ho raha hain 
+1. aap part of array send kar sakte ho ya pass kar sakte ho
+
+i.e agar 4 index se hi bhejna hain toh yese send kar sakte ho
+
+getsum (int arr+3, int size )
+
+
+~~~~~~~~~
+int *p =&Num;
+
+se pata chalta hai ki kis type ka data hai 
+aur kitni byte ko consider karna hain
