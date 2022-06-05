@@ -1,0 +1,11 @@
+refrence varagble
+
+same memory alag alga nam
+
+ab why kyu chahiye??
+
+jab function main pass by value karte hain toh
+valuec change nahi hoti but agar refrence varible pass kare toh chage honga
+
+jaise hum input main refrence varaible de sakte hian waise hi hum output main bhi de sakte hain
+

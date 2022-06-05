@@ -1,0 +1,3 @@
+#define
+
+Macro -> a piece of code in a program that is replace by the value of Macro
