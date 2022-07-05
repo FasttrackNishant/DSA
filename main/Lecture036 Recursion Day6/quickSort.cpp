@@ -36,8 +36,8 @@ int partition( int arr[], int s, int e) {
         }
 
     }
-
     return pivotIndex;
+
 
 }
 
