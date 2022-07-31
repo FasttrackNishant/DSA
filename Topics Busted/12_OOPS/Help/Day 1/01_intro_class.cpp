@@ -22,12 +22,13 @@ class Hero
 public:
     char level;
 
-//default constructor
+    // default constructor
 
-Hero (){
+    Hero()
+    {
 
-cout<<"Constructor here"<<endl;
-}
+        cout << "Constructor here" << endl;
+    }
 
     void print()
     {
@@ -57,51 +58,47 @@ cout<<"Constructor here"<<endl;
 int main()
 {
 
+    /*
+        // static allocation
+        Hero a;
+        a.setHealth(50);
+        cout << a.getHealth() << endl;
+        a.setLevel('B');
+        cout << a.getLevel() << endl;
 
-/*
-    // static allocation
-    Hero a;
-    a.setHealth(50);
-    cout << a.getHealth() << endl;
-    a.setLevel('B');
-    cout << a.getLevel() << endl;
+        // dynamic allocation
+        Hero *b = new Hero;
+        (*b).setHealth(100);
+        cout << (*b).getHealth()<<endl;
+        //one more way
+        b->setLevel('C');
+        cout << b->getLevel();
 
-    // dynamic allocation
-    Hero *b = new Hero;
-    (*b).setHealth(100);
-    cout << (*b).getHealth()<<endl;
-    //one more way
-    b->setLevel('C');
-    cout << b->getLevel();
+        //     Hero h1;
+        //     /*   h1.health = 80;
+        //        h1.level = 'z';
+        //        cout << h1.health << endl;
+        //        cout << h1.level << endl;
+        //
+        //     h1.setHealth(95);
+        //     h1.setLevel('v');
+        //     cout << "Size of Ramesh " << sizeof(h1) << endl;
+        //     cout << h1.getHealth() << endl;
+        //     cout << h1.getLevel();
 
-    //     Hero h1;
-    //     /*   h1.health = 80;
-    //        h1.level = 'z';
-    //        cout << h1.health << endl;
-    //        cout << h1.level << endl;
-    //    
-    //     h1.setHealth(95);
-    //     h1.setLevel('v');
-    //     cout << "Size of Ramesh " << sizeof(h1) << endl;
-    //     cout << h1.getHealth() << endl;
-    //     cout << h1.getLevel();
-
-    //     // cout<<"size of h1 "<<s izeof(h1)<<endl;
-
-
-*/
-
-//object created to test constructor
-// ye object banane se hi contructor called ho gaya 
-Hero ramesh;
-
-//dynamically
-
-Hero *h = new Hero;     
-//iske liye bhi contructor called hota hain 
+        //     // cout<<"size of h1 "<<s izeof(h1)<<endl;
 
 
+    */
 
+    // object created to test constructor
+    //  ye object banane se hi contructor called ho gaya
+    Hero ramesh;
+
+    // dynamically
+
+    Hero *h = new Hero;
+    // iske liye bhi contructor called hota hain
 
     return 0;
 }
