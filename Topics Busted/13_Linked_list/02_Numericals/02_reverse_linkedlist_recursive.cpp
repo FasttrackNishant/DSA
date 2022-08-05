@@ -15,28 +15,29 @@ public:
     }
 };
 
-Node *reverseLL(Node *&head)
+void reverse(Node *&head, Node *curr, Node *prev)
 {
 
-    if (head == NULL || head->next == NULL)
+    // base case
+
+    if (curr == NULL)
     {
-        return head;
+        head = prev;
+        return;
     }
-    Node *prev = NULL;
-    Node *curr = head;
-    Node *forward = NULL;
-
-    while (curr != NULL)
-
-    {
-        forward = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = forward;
-    }
-
-    return prev;
+    Node *forward = curr->next;
+    reverse(head , forward ,curr);
+    curr ->next = prev;
 }
+Node *reversell(Node *&head)
+{
+    Node *curr = head;
+    Node *prev = NULL;
+
+    reverse(head, curr, prev);
+    return head;
+}
+
 void insertatTail(Node *&tail, int d)
 {
 
@@ -73,7 +74,7 @@ int main()
     insertatTail(tail, 80);
     printll(head);
 
-    reverseLL(head);
+    reversell(head);
     printll(tail);
 
     return 0;
