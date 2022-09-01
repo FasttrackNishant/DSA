@@ -75,7 +75,7 @@ void insertatTail(node *&tail, node *&head, int d)
 {
 
     if (tail == NULL)
-    {
+    {//ye wali case jab tail null ho tabhi use hogi
 
         node *temp = new node(d);
         tail = temp;
@@ -83,6 +83,7 @@ void insertatTail(node *&tail, node *&head, int d)
     }
     else
     {
+        //this is default equation
 
         node *temp = new node(d);
         tail->next = temp;
