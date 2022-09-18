@@ -39,7 +39,33 @@ node *build_Tree(node *root)
 
     return root;
 }
+//this will print the data in the one line
 
+void levelOrderTraversal(node *root)
+{
+    queue<Node *> q;
+    q.push(root);
+
+    while (!q.empty())
+
+    {
+        Node *temp = q.front();
+        cout << temp->data << " ";
+        q.pop();
+
+        if (temp->left)
+        {
+            q.push(temp->left);
+        }
+        if (temp->right)
+        {
+            q.push(temp->right);
+        }
+    }
+}
+
+
+//this is by using the seperator
 void levelordertraversal(node *root)
 {
     queue<node *> q;
