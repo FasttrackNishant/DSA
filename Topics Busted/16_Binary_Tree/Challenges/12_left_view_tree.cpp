@@ -1,33 +1,28 @@
-//{ Driver Code Starts
 // Initial Template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
 
+// Tree Node
 struct Node
 {
     int data;
-    struct Node *left;
-    struct Node *right;
-
-    Node(int x)
-    {
-        data = x;
-        left = NULL;
-        right = NULL;
-    }
+    Node *left;
+    Node *right;
 };
 
-void printInorder(Node *node)
+// Utility function to create a new Tree Node
+Node *newNode(int val)
 {
-    if (node == NULL)
-    {
-        return;
-    }
-    printInorder(node->left);
-    cout << node->data << " ";
-    printInorder(node->right);
+    Node *temp = new Node;
+    temp->data = val;
+    temp->left = NULL;
+    temp->right = NULL;
+
+    return temp;
 }
+
+// Function to Build Tree
 Node *buildTree(string str)
 {
     // Corner Case
@@ -43,7 +38,7 @@ Node *buildTree(string str)
         ip.push_back(str);
 
     // Create the root of the tree
-    Node *root = new Node(stoi(ip[0]));
+    Node *root = newNode(stoi(ip[0]));
 
     // Push the root to the queue
     queue<Node *> queue;
@@ -65,8 +60,8 @@ Node *buildTree(string str)
         if (currVal != "N")
         {
 
-            // Create the left child for the current Node
-            currNode->left = new Node(stoi(currVal));
+            // Create the left child for the current node
+            currNode->left = newNode(stoi(currVal));
 
             // Push it to the queue
             queue.push(currNode->left);
@@ -83,7 +78,7 @@ Node *buildTree(string str)
         {
 
             // Create the right child for the current node
-            currNode->right = new Node(stoi(currVal));
+            currNode->right = newNode(stoi(currVal));
 
             // Push it to the queue
             queue.push(currNode->right);
@@ -95,80 +90,65 @@ Node *buildTree(string str)
 }
 
 // } Driver Code Ends
-// User function Template for C++
 
 /*
-structure of the node of the binary tree is as
 struct Node
 {
     int data;
-    struct Node *left;
-    struct Node *right;
-
-    Node(int x)
-    {
-        data = x;
-        left = NULL;
-        right = NULL;
-    }
+    Node* left;
+    Node* right;
 };
 */
 class Solution
 {
 public:
-    void solve(Node *root, int sum, int &maxSum, int len, int maxLen)
+    // Function to return a list of nodes visible from the top view
+    // from left to right in Binary Tree.
+
+    void solve(Node *root, vector<int> &ans, int level)
     {
         // base case
 
         if (root == NULL)
+            return ans;
+
+        // if we enetered into the new level
+
+        if (level == ans.size())
         {
-            if (len > maxLen)
-            {
-                maxLen = len;
-                maxSum = sum;
-            }
-            else if (len == maxLen)
-            {
-                maxSum = max(sum, maxSum);
-            }
-            return;
+            ans.push_back(root->data);
         }
 
-        sum = sum + root->data;
-
-        solve(root->left, sum, maxSum, len + 1, maxLen);
-        solve(root->right, sum, maxSum, len + 1, maxLen);
+        solve(root->left,ans,level+1);
+        solve(root->right,ans,level+1);
     }
 
-    int sumOfLongRootToLeafPath(Node *root)
+    vector<int> leftView(Node *root)
     {
-        int len = 0;
-        int maxLen = 0;
+        vector<int> ans;
 
-        int sum = 0;
-        int maxSum = INT_MIN;
-
-        solve(root, sum, maxSum, len, maxLen);
+        solve(root, ans, 0);
+        return ans;
     }
 };
 
-//{ Driver Code Starts.
+// { Driver Code Starts.
 
 int main()
 {
-
-    int t;
-    scanf("%d", &t);
-    cin.ignore();
-    while (t--)
+    int tc;
+    cin >> tc;
+    cin.ignore(256, '\n');
+    while (tc--)
     {
         string treeString;
         getline(cin, treeString);
+        Solution ob;
         Node *root = buildTree(treeString);
-        Solution obj;
-        int res = obj.sumOfLongRootToLeafPath(root);
-        cout << res << "\n";
+        vector<int> vec = ob.leftView(root);
+        for (int x : vec)
+            cout << x << " ";
+        cout << endl;
     }
     return 0;
-}
-// } Driver Code Ends
+} // } Driver Code Ends
