@@ -10,7 +10,7 @@ int solve(string a, string b, int i, int j)
 
     if (j == b.length())
         return 0;
-
+ 
     int ans = 0;
     // match
     if (a[i] == b[j])

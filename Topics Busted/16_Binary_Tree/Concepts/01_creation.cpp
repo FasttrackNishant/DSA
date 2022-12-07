@@ -30,7 +30,7 @@ node *build_Tree(node *root)
     {
         return NULL;
     }
-    cout << "Enter the da  ta for inserting in left " << data << endl;
+    cout << "Enter the data for inserting in left " << data << endl;
     // Recursive call mardi
     root->left = build_Tree(root->left);
 
@@ -43,13 +43,13 @@ node *build_Tree(node *root)
 
 void levelOrderTraversal(node *root)
 {
-    queue<Node *> q;
+    queue<node *> q;
     q.push(root);
 
     while (!q.empty())
 
     {
-        Node *temp = q.front();
+        node *temp = q.front();
         cout << temp->data << " ";
         q.pop();
 
