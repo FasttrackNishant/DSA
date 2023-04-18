@@ -4,7 +4,7 @@ using namespace std;
 class Nodelist
 {
 public:
-    int data;
+    int data; 
     Nodelist *next;
 
     Nodelist(int data)

@@ -17,8 +17,9 @@ int main()
 
     cout << "printing top element :- " << s.top() << endl;
 
-    cout<<"is stack empty : "<<s.empty()<<endl;
+    cout << "is stack empty : " << s.empty() << endl;
 
-    cout<<"size of the stack is "<<s.size()<<endl;
+    cout << "size of the stack is " << s.size() << endl;
+ 
     return 0;
 }
