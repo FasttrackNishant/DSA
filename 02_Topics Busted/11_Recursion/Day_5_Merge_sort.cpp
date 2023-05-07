@@ -26,9 +26,7 @@ void merge(int *arr, int s, int e)
     mainArrayIndex = mid + 1;
 
     for (int i = 0; i < len2; i++)
-
     {
-
         second[i] = arr[mainArrayIndex++];
     }
 
@@ -58,9 +56,9 @@ void merge(int *arr, int s, int e)
     {
         arr[mainArrayIndex++] = second[index2++];
     }
-    
-    delete []first;
-    delete []second;
+
+    delete[] first;
+    delete[] second;
 }
 void mergeSort(int *arr, int s, int e)
 {
