@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Tree.h"
 using namespace std;
 
 int solve(Node *root, int &i, int k)

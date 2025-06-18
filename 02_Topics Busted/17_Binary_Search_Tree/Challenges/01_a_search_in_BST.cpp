@@ -1,7 +1,8 @@
 #include <iostream>
+#include "Tree.h"
 using namespace std;
 
-bool searchInBST(BinaryTreeNode<int> *root, int x)
+bool searchInBST(Node *root, int x)
 {
     // base case
     if (root == NULL)

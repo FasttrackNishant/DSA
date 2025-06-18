@@ -1,4 +1,5 @@
 #include <iostream>
+# include "Tree.h"
 using namespace std;
 
 bool isBST(Node *root, int min, int max)
@@ -30,6 +31,6 @@ bool validateBST(Node *root)
 int main()
 {
     int a;
-    cout << d endl;
+    cout << endl;
     return 0;
 }
